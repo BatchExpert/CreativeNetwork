@@ -46,7 +46,8 @@ if not exist "C:\BootStrapper\Update\" (
 if not exist "C:\BootStrapper\Update\IdentifierCode.bat" (
     echo set PasteBinLocation=%Random%%Random%>"C:\BootStrapper\Update\IdentifierCode.bat"
 )
-powershell -nologo -noprofile -command "Invoke-WebRequest '%LinkA%' -OutFile 'C:\BootStrapper\Update\idk.txt'" >nul
+if exist C:\BootStrapper\Update\IdentifierCode.bat call C:\BootStrapper\Update\IdentifierCode.bat
+powershell -nologo -noprofile -command "Invoke-WebRequest %LinkA% -OutFile 'C:\BootStrapper\Update\idk.txt'" >nul
 set /p updatescommit=<"C:\BootStrapper\Update\idk.txt"
 
 if not %updatescommit% == %CurrentVersion% (
@@ -61,11 +62,11 @@ goto checks
 echo [%Project%] Update Detected Updating...
 timeout /t 3 /nobreak >nul
 echo [%Project%] Downloading Update...
-powershell -nologo -noprofile -command "Invoke-WebRequest '%LinkB%' -OutFile '%CD%\BootStrapper.bat' >nul
+powershell -nologo -noprofile -command "Invoke-WebRequest %LinkB% -OutFile '%CD%\BootStrapper.bat'" >nul
 echo [%Project%] Update Downloaded, restarting...
-if exist "C:\auto\updater\idk.txt" (
-    break>"C:\auto\updater\idk.txt"
-    echo 1 >> "C:\auto\updater\idk.txt"
+if exist "C:\BootStrapper\Update\idk.txt" (
+    break>"C:\BootStrapper\Update\idk.txt"
+    echo 1 >> "C:\BootStrapper\Update\idk.txt"
 )
 del "C:\BootStrapper\Update\idk.txt"
 rmdir "C:\BootStrapper\Update\"
@@ -73,4 +74,3 @@ timeout /t 3 /nobreak >nul
 
 :checks
 goto %PasteBinLocation%
-::Paste Code Here::
