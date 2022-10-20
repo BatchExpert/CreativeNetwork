@@ -1,1 +1,1 @@
-%Project%%Version%A
+VerA
