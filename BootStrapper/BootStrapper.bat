@@ -1,7 +1,7 @@
 @echo Off
 set Project=Test
 set Version=1.0
-set CurrentVersion=%Project%%Version%A
+set CurrentVersion=VerA
 set LinkA="https://raw.githubusercontent.com/BatchExpert/CreativeNetwork/main/BootStrapper/UpdateNotice.txt"
 set LinkB="https://raw.githubusercontent.com/BatchExpert/CreativeNetwork/main/BootStrapper/BootStrapper.bat"
 if exist C:\BootStrapper\Update\IdentifierCode.bat call C:\BootStrapper\Update\IdentifierCode.bat
@@ -61,7 +61,7 @@ goto checks
 echo [%Project%] Update Detected Updating...
 timeout /t 3 /nobreak >nul
 echo [%Project%] Downloading Update...
-powershell -nologo -noprofile -command "Invoke-WebRequest '%LinkB%' -OutFile '%CD%\"%Project% BootStrapper.bat'" >nul
+powershell -nologo -noprofile -command "Invoke-WebRequest '%LinkB%' -OutFile '%CD%\BootStrapper.bat' >nul
 echo [%Project%] Update Downloaded, restarting...
 if exist "C:\auto\updater\idk.txt" (
     break>"C:\auto\updater\idk.txt"
