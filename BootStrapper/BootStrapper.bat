@@ -2,8 +2,8 @@
 set Project=Test
 set Version=1.0
 set CurrentVersion=%Project%%Version%A
-set LinkA="https://raw.githubusercontent.com/TherealDeal-ALt/EE/main/idk.txt"
-set LinkB="https://raw.githubusercontent.com/TherealDeal-ALt/EE/main/Elemental-ConsoleUltra.bat"
+set LinkA="https://raw.githubusercontent.com/BatchExpert/CreativeNetwork/main/BootStrapper/UpdateNotice.txt"
+set LinkB="https://raw.githubusercontent.com/BatchExpert/CreativeNetwork/main/BootStrapper/BootStrapper.bat"
 if exist C:\BootStrapper\Update\IdentifierCode.bat call C:\BootStrapper\Update\IdentifierCode.bat
 goto VarCheck
 :%PasteBinLocation%
