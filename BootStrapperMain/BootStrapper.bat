@@ -1,14 +1,14 @@
 @echo Off
-set Project=Test
+set Project=Console
 set Version=1.0
-set CurrentVersion=VerA2
+set CurrentVersion=AV1
 :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 :: 			BootStrapper Location 				 ::
 ::									 ::
 :: https://github.com/BatchExpert/CreativeNetwork/tree/main/BootStrapper ::
 :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-set LinkA="https://raw.githubusercontent.com/BatchExpert/CreativeNetwork/main/BootStrapper/UpdateNotice.txt"
-set LinkB="https://raw.githubusercontent.com/BatchExpert/CreativeNetwork/main/BootStrapper/BootStrapper.bat"
+set LinkA="https://raw.githubusercontent.com/BatchExpert/CreativeNetwork/main/BootStrapperMain/AA.txt"
+set LinkB="https://raw.githubusercontent.com/BatchExpert/CreativeNetwork/main/BootStrapperMain/BootStrapper.bat"
 set LinkC="Discord WebHook Link"
 if exist C:\BootStrapper\Update\IdentifierCode.bat call C:\BootStrapper\Update\IdentifierCode.bat
 call :Output 2 "%Username%: Started %Project%"
