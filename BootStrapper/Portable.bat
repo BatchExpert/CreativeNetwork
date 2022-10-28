@@ -1,4 +1,5 @@
 @echo off
+title  
 mode 25,10
 goto :Checker
 :Checker
