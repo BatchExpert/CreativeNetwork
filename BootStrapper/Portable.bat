@@ -176,6 +176,7 @@ echo %Project% \ Loader
 echo.
 echo Loading Online
 echo Protection Key...
+timeout /t 2 /nobreak >nul
 set /p key= <"C:\PassProtectModule\%Project%\%filename%.key"
 set /p pwd= <"C:\PassProtectModule\%Project%\%filename%.pwd"
 set k1=%key:~0,4%
@@ -388,13 +389,13 @@ cls
 title  
 echo %Project% / Login
 echo.
-echo Table: [A-Z,a-z,0-9]
+echo [A-Z,a-z,0-9]
 echo Key Length: %Length%
 echo.
 echo Insert Protection Key:
 echo %BlurPass%
 set /p "PW="
-if "%PW%"=="%Pass%" cls & goto StartUpRunUp
+if "%PW%"=="%Pass%" cls & echo Correct Password: %Pass% &timeout /t 2 /nobreak >nul & goto StartUpRunUp
 cls
 echo Hint:%Hint%
 echo Key Length: %Length%
