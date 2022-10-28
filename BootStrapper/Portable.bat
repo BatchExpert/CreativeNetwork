@@ -153,7 +153,7 @@ echo Successfully Finsihed, Opening Login
 goto DEC
 :DEC
 :CCC
-title Login / %Project%
+title %Project% / Login
 cls
 if not exist "C:\PassProtectModule\%Project%\%filename%.pwd" goto ERRpwd
 if not exist "C:\PassProtectModule\%Project%\%filename%.key" goto ERRkey
@@ -306,7 +306,7 @@ if defined t%num% goto DEC3
 set /a num2=%num2%+1
 goto DEC4
 :StartUpRunUp
-title   
+
 goto PasteHere
 goto :StartUpRunUp
 :DEC5
@@ -375,7 +375,8 @@ if %t20%==blank set "t20="
 set "Pass=%t1%%t2%%t3%%t4%%t5%%t6%%t7%%t8%%t9%%t10%%t11%%t12%%t13%%t14%%t15%%t16%%t17%%t18%%t19%%t20%"
 set BlurPass=%tD1%%tD2%%tD3%%tD4%%tD5%%tD6%%tD7%%tD8%%tD9%%tD10%%tD11%%tD12%%tD13%%tD14%%tD15%%tD16%%tD17%%tD18%%tD19%%tD20%
 cls
-title Login / %Project% / Login
+title %Project% / Login
+echo Github Version
 echo Table: [A-Z,a-z,0-9]
 echo Password Length: %Length%
 echo.
