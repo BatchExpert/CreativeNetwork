@@ -174,7 +174,8 @@ goto DEC
 cls
 echo %Project% \ Loader
 echo.
-echo Loading Online Protection Key...
+echo Loading Online
+echo Protection Key...
 set /p key= <"C:\PassProtectModule\%Project%\%filename%.key"
 set /p pwd= <"C:\PassProtectModule\%Project%\%filename%.pwd"
 set k1=%key:~0,4%
