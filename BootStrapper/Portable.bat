@@ -395,3 +395,4 @@ goto DEC5
 :: Paste Your Code Below The :PasteHere          ::
 ::::::::::::::::::::::::::::::::::::::::::::::::::::
 :PasteHere
+mode 120,30
