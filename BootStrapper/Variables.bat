@@ -2,7 +2,6 @@
 set Project=%Project%
 set project=%Project%
 set User=%Username%
-set "Pass=%Pass%"
 set LoaderType=5
 set Debug=1
 set Admin=0
