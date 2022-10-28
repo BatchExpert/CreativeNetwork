@@ -148,26 +148,26 @@ set /a e18=%e18%+%r18%
 set /a e19=%e19%+%r19%
 set /a e20=%e20%+%r20%
 set Length2=0
-if not %e1%==blank set /a Length=%Length2% +1
-if not %e2%==blank set /a Length=%Length2% +1
-if not %e3%==blank set /a Length=%Length2% +1
-if not %e4%==blank set /a Length=%Length2% +1
-if not %e5%==blank set /a Length=%Length2% +1
-if not %e6%==blank set /a Length=%Length2% +1
-if not %e7%==blank set /a Length=%Length2% +1
-if not %e8%==blank set /a Length=%Length2% +1
-if not %e9%==blank set /a Length=%Length2% +1
-if not %e10%==blank set /a Length=%Length2% +1
-if not %e11%==blank set /a Length=%Length2% +1
-if not %e12%==blank set /a Length=%Length2% +1
-if not %e13%==blank set /a Length=%Length2% +1
-if not %e14%==blank set /a Length=%Length2% +1
-if not %e15%==blank set /a Length=%Length2% +1
-if not %e16%==blank set /a Length=%Length2% +1
-if not %e17%==blank set /a Length=%Length2% +1
-if not %e18%==blank set /a Length=%Length2% +1
-if not %e19%==blank set /a Length=%Length2% +1
-if not %e20%==blank set /a Length=%Length2% +1
+if not %e1%==blank set /a Length2=%Length2% +1
+if not %e2%==blank set /a Length2=%Length2% +1
+if not %e3%==blank set /a Length2=%Length2% +1
+if not %e4%==blank set /a Length2=%Length2% +1
+if not %e5%==blank set /a Length2=%Length2% +1
+if not %e6%==blank set /a Length2=%Length2% +1
+if not %e7%==blank set /a Length2=%Length2% +1
+if not %e8%==blank set /a Length2=%Length2% +1
+if not %e9%==blank set /a Length2=%Length2% +1
+if not %e10%==blank set /a Length2=%Length2% +1
+if not %e11%==blank set /a Length2=%Length2% +1
+if not %e12%==blank set /a Length2=%Length2% +1
+if not %e13%==blank set /a Length2=%Length2% +1
+if not %e14%==blank set /a Length2=%Length2% +1
+if not %e15%==blank set /a Length2=%Length2% +1
+if not %e16%==blank set /a Length2=%Length2% +1
+if not %e17%==blank set /a Length2=%Length2% +1
+if not %e18%==blank set /a Length2=%Length2% +1
+if not %e19%==blank set /a Length2=%Length2% +1
+if not %e20%==blank set /a Length2=%Length2% +1
 if %Length2% neq 5 (
 echo Too Short Of A Key (%Length2%/20)
 echo It has to be above 5 or more
