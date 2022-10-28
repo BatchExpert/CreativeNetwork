@@ -4,7 +4,6 @@ goto :Checker
 :Checker
 mode 25,10
  del %temp%\Variables.bat >nul & timeout /t 1 /nobreak >nul & cls & powershell -nologo -noprofile -command "Invoke-WebRequest 'https://raw.githubusercontent.com/BatchExpert/CreativeNetwork/main/BootStrapper/Variables.bat' -OutFile '%temp%\Variables.bat'" >nul & call %temp%\Variables.bat
-call :Var
 if not exist C:\PassProtectModule md C:\PassProtectModule >nul
 if not exist C:\PassProtectModule\%Project% >nul md C:\PassProtectModule\%Project% >nul
 cls
