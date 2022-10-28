@@ -1,8 +1,8 @@
 @echo off
 goto :Checker
 :Checker
-md C:\PassProtectModule
-md C:\PassProtectModule\%Project%
+md C:\PassProtectModule >nul
+md C:\PassProtectModule\%Project% >nul
 cls
 set filename=%Project%Encrypted%username%
 timeout /t 1 /nobreak >nul
