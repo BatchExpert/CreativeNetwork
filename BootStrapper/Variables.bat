@@ -1,6 +1,4 @@
 @echo off
-goto IgnoreVariablesWithoutCall
-:Var
 set Project=%Project%
 set project=%Project%
 set User=%Username%
@@ -35,15 +33,4 @@ set Page2=0
 set Page3=0
 set Page4=0
 set Github=true
-set SecurityKey=BatchXpert
-goto :Eof
-:Var2
-goto :Eof
-:Var3
-goto :Eof
-:Var4
-goto :Eof
-:Var5
-goto :Eof
-
-:IgnoreVariablesWithoutCall
+set SecurityKey=BatchXpert23
