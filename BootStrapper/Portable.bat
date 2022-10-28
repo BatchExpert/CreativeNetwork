@@ -380,7 +380,7 @@ set "Pass=%t1%%t2%%t3%%t4%%t5%%t6%%t7%%t8%%t9%%t10%%t11%%t12%%t13%%t14%%t15%%t16
 set BlurPass=%tD1%%tD2%%tD3%%tD4%%tD5%%tD6%%tD7%%tD8%%tD9%%tD10%%tD11%%tD12%%tD13%%tD14%%tD15%%tD16%%tD17%%tD18%%tD19%%tD20%
 mode 25,10
 cls
-title %Project% / Login
+title  
 echo %Project% / Login
 echo.
 echo Github Version
