@@ -383,7 +383,6 @@ cls
 title  
 echo %Project% / Login
 echo.
-echo Github Version
 echo Table: [A-Z,a-z,0-9]
 echo Password Length: %Length%
 echo.
