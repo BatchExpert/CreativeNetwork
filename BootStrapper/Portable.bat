@@ -17,7 +17,7 @@ goto Checker
 cls
 cls
 :ENCpwd
-set "text=BatchXpert22"
+set "text=%SecurityKey%"
 :ENC2
 set num2=0
 set c=
