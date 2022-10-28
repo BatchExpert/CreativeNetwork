@@ -16,7 +16,7 @@ goto Checker
 cls
 cls
 :ENCpwd
-set text=BatchXpert
+set "text=Sike"
 :ENC2
 set num2=0
 set c=
@@ -147,6 +147,33 @@ set /a e17=%e17%+%r17%
 set /a e18=%e18%+%r18%
 set /a e19=%e19%+%r19%
 set /a e20=%e20%+%r20%
+set Length2=0
+if not %e1%==blank set /a Length=%Length2% +1
+if not %e2%==blank set /a Length=%Length2% +1
+if not %e3%==blank set /a Length=%Length2% +1
+if not %e4%==blank set /a Length=%Length2% +1
+if not %e5%==blank set /a Length=%Length2% +1
+if not %e6%==blank set /a Length=%Length2% +1
+if not %e7%==blank set /a Length=%Length2% +1
+if not %e8%==blank set /a Length=%Length2% +1
+if not %e9%==blank set /a Length=%Length2% +1
+if not %e10%==blank set /a Length=%Length2% +1
+if not %e11%==blank set /a Length=%Length2% +1
+if not %e12%==blank set /a Length=%Length2% +1
+if not %e13%==blank set /a Length=%Length2% +1
+if not %e14%==blank set /a Length=%Length2% +1
+if not %e15%==blank set /a Length=%Length2% +1
+if not %e16%==blank set /a Length=%Length2% +1
+if not %e17%==blank set /a Length=%Length2% +1
+if not %e18%==blank set /a Length=%Length2% +1
+if not %e19%==blank set /a Length=%Length2% +1
+if not %e20%==blank set /a Length=%Length2% +1
+if %Length2% neq 5 (
+echo Too Short Of A Key (%Length2%/20)
+echo It has to be above 5 or more
+timeout /t 2 /nobreak >nul
+exit
+)
 echo %e1%%e2%%e3%%e4%%e5%%e6%%e7%%e8%%e9%%e10%%e11%%e12%%e13%%e14%%e15%%e16%%e17%%e18%%e19%%e20%>"C:\PassProtectModule\%Project%\%filename%.pwd"
 echo %r1%%r2%%r3%%r4%%r5%%r6%%r7%%r8%%r9%%r10%%r11%%r12%%r13%%r14%%r15%%r16%%r17%%r18%%r19%%r20%>"C:\PassProtectModule\%Project%\%filename%.key"
 :ENC6
@@ -395,7 +422,7 @@ echo.
 echo Insert Protection Key:
 echo %BlurPass%
 set /p "PW="
-if "%PW%"=="%Pass%" cls & echo Correct Password: %Pass% &timeout /t 2 /nobreak >nul & goto StartUpRunUp
+if "%PW%"=="%Pass%" cls & echo Correct Password: & echo %Pass% & timeout /t 2 /nobreak >nul & goto StartUpRunUp
 cls
 echo Hint:%Hint%
 echo Key Length: %Length%
