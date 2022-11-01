@@ -3,9 +3,9 @@
 :: Batch portion
 
 @echo off
-
+:start
 cscript /e:jscript "%~f0"
-
+:end
 :: JScript portion */
 
 var shl = new ActiveXObject("WScript.Shell");
