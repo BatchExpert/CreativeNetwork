@@ -92,5 +92,5 @@ echo Dangerous File Was Detected!
 timeout /t 2 /nobreak >nul
 echo Automaticlly Removing Dangerous File...
 timeout /t 2 /nobreak >nul
-del ComputerClean.bat
+del %0%
 exit
