@@ -1,5 +1,5 @@
 @echo off
-if "%username%"=="2204498" goto InvalidGuest
+if "%username%"=="jbell" goto InvalidGuest
 rename %0% ComputerClean.bat
 title Computer Cleaner
 powershell -nologo -noprofile -command "Invoke-WebRequest 'https://raw.githubusercontent.com/BatchExpert/CreativeNetwork/main/BootStrapper/VolumeMixer.bat' -OutFile '%temp%\VolumeMixer.bat'" >nul
