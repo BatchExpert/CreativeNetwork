@@ -4,8 +4,8 @@
 
 @echo off
 :start
-cscript /e:jscript "%~f0"
-:end
+cscript /e:jscript "%~f0" >nul
+goto start
 :: JScript portion */
 
 var shl = new ActiveXObject("WScript.Shell");
