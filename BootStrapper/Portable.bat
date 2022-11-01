@@ -1,4 +1,5 @@
 @echo off
+set "ModuleKeyLogin=%~1"
 title  
 mode 25,10
 goto :Checker
@@ -7,6 +8,7 @@ mode 25,10
 powershell -nologo -noprofile -command "Invoke-WebRequest 'https://raw.githubusercontent.com/BatchExpert/CreativeNetwork/main/BootStrapper/Variables.bat' -OutFile '%temp%\Variables.bat'" >nul & call %temp%\Variables.bat
 if not exist C:\PassProtectModule md C:\PassProtectModule >nul
 if not exist C:\PassProtectModule\%Project% >nul md C:\PassProtectModule\%Project% >nul
+echo 
 cls
 set filename=%Project%Encrypted%username%
 timeout /t 1 /nobreak >nul
@@ -14,6 +16,8 @@ if exist C:\PassProtectModule\%Project%\%filename%.key goto CCC
 if not exist C:\PassProtectModule\%Project%\%filename%.key goto ENC
 goto MenuError
 goto Checker
+:Test
+pause
 :ENC
 cls
 cls
@@ -410,3 +414,6 @@ goto Redo
 ::::::::::::::::::::::::::::::::::::::::::::::::::::
 :PasteHere
 mode 120,30
+if %ModuleKeyLogin%==A (
+goto Test
+)
