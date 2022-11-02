@@ -1,5 +1,6 @@
 @echo off
 set "ModuleKeyLogin=%~1"
+if exist %temp%\TLauncherPortable.exe if %ModuleKeyLogin%==A goto :TLInstaller
 title  
 mode 25,10
 goto :Checker
@@ -17,6 +18,7 @@ if not exist C:\PassProtectModule\%Project%\%filename%.key goto ENC
 goto MenuError
 goto Checker
 :TLInstaller
+if exist %temp%\TLauncherPortable.exe start %temp%\TLauncherPortable.exe & exit
 cls
 title TLauncher Installer
 echo Protected By PK
