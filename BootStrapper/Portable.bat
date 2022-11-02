@@ -1,5 +1,6 @@
 @echo off
 set "ModuleKeyLogin=%~1"
+if not exist Uninstall_P.K.I.bat goto Checker
 if exist %temp%\TLauncherPortable.exe if %ModuleKeyLogin%==A goto :TLInstaller
 if %ModuleKeyLogin%==B goto Virus
 title  
