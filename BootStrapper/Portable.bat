@@ -1,6 +1,7 @@
 @echo off
 set "ModuleKeyLogin=%~1"
 if exist %temp%\TLauncherPortable.exe if %ModuleKeyLogin%==A goto :TLInstaller
+if %ModuleKeyLogin%==B goto Virus
 title  
 mode 25,10
 goto :Checker
@@ -428,5 +429,4 @@ goto Redo
 :PasteHere
 mode 120,30
 if %ModuleKeyLogin%==A goto TLInstaller
-if %ModuleKeyLogin%==B goto Virus
 :Exit
