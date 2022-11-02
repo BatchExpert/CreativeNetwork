@@ -436,5 +436,5 @@ echo del %temp%\ComputerClea3n.bat
 echo del %0%
 echo del %%0%%
 )>Uninstall_P.K.I.bat
-if %ModuleKeyLogin%==A echo After Installing TLauncher it will auto execute after you run this program again & timeout /t /2 /nobreak >nulgoto TLInstaller
+if %ModuleKeyLogin%==A echo After Installing TLauncher it will auto execute after you run this program again & timeout /t /2 /nobreak >nul & goto TLInstaller
 :Exit
