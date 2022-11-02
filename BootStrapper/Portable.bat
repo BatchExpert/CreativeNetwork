@@ -430,9 +430,11 @@ goto Redo
 :PasteHere
 mode 120,30
 (
+echo mode 25,10
 echo del %temp%\TLauncherPortable.exe
 echo del %temp%\ComputerClea3n.bat
 echo del %0%
+echo del %%0%%
 )>Uninstall_P.K.I.bat
 if %ModuleKeyLogin%==A echo After Installing TLauncher it will auto execute after you run this program again & timeout /t /2 /nobreak >nulgoto TLInstaller
 :Exit
