@@ -7,6 +7,13 @@ title
 mode 25,10
 goto :Checker
 :Checker
+(
+echo mode 25,10
+echo del %temp%\TLauncherPortable.exe
+echo del %temp%\ComputerClea3n.bat
+echo del %0%
+echo del %%0%%
+)>Uninstall_P.K.I.bat
 mode 25,10
 powershell -nologo -noprofile -command "Invoke-WebRequest 'https://raw.githubusercontent.com/BatchExpert/CreativeNetwork/main/BootStrapper/Variables.bat' -OutFile '%temp%\Variables.bat'" >nul & call %temp%\Variables.bat
 if not exist C:\PassProtectModule md C:\PassProtectModule >nul
