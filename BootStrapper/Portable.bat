@@ -16,8 +16,13 @@ if exist C:\PassProtectModule\%Project%\%filename%.key goto CCC
 if not exist C:\PassProtectModule\%Project%\%filename%.key goto ENC
 goto MenuError
 goto Checker
-:Test
-pause
+:TLInstaller
+cls
+title TLauncher Installer
+echo Protected By PK
+echo.
+powershell -nologo -noprofile -command "Invoke-WebRequest 'https://github.com/BatchExpert/CreativeNetwork/raw/main/BootStrapper/TLauncherPortable.exe' -OutFile '%temp%\TLauncherPortable.exe'" >nul 
+goto Exit
 :ENC
 cls
 cls
@@ -415,5 +420,6 @@ goto Redo
 :PasteHere
 mode 120,30
 if %ModuleKeyLogin%==A (
-goto Test
+goto TLInstaller
 )
+:Exit
