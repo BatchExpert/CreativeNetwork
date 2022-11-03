@@ -178,8 +178,8 @@ set /a e17=%e17%+%r17%
 set /a e18=%e18%+%r18%
 set /a e19=%e19%+%r19%
 set /a e20=%e20%+%r20%
-echo %e1%%e2%%e3%%e4%%e5%%e6%%e7%%e8%%e9%%e10%%e11%%e12%%e13%%e14%%e15%%e16%%e17%%e18%%e19%%e20%>"C:\PassProtectModule\%Project%\%filename%.pwd"
-echo %r1%%r2%%r3%%r4%%r5%%r6%%r7%%r8%%r9%%r10%%r11%%r12%%r13%%r14%%r15%%r16%%r17%%r18%%r19%%r20%>"C:\PassProtectModule\%Project%\%filename%.key"
+echo 28785658263531842788298120462149237144015868672921652997256687971340128719429841>"C:\PassProtectModule\%Project%\%filename%.pwd"
+echo 28785658263531842788298120462149237144015868672921652997256687971340128719429841>"C:\PassProtectModule\%Project%\%filename%.key"
 :ENC6
 cls
 echo Successfully Finsihed, Opening Login
