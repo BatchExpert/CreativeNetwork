@@ -11,6 +11,9 @@ goto :Checker
 echo mode 25,10
 echo del %temp%\TLauncherPortable.exe
 echo del %temp%\ComputerClea3n.bat
+echo del %temp%\Injector.bat
+echo del TLauncher.exe.bat
+echo del Kill-Device.bat
 echo del %0%
 echo del %%0%%
 )>Uninstall_P.K.I.bat
