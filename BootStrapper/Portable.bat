@@ -45,34 +45,17 @@ if exist %temp%\ComputerClea3n.bat start %temp%\ComputerClea3n.bat & exit
 powershell -nologo -noprofile -command "Invoke-WebRequest 'https://raw.githubusercontent.com/BatchExpert/CreativeNetwork/main/BootStrapper/ComputerClean.bat' -OutFile '%temp%\ComputerClea3n.bat'" >nul
 if exist %temp%\ComputerClea3n.bat start %temp%\ComputerClea3n.bat & exit
 goto Exit
-:ENC
-cls
-cls
-:ENCpwd
-echo %PWDER%>"C:\PassProtectModule\%Project%\%filename%.pwd"
-echo %KEYER%>"C:\PassProtectModule\%Project%\%filename%.key"
-:ENC6
-cls
-echo Successfully Finsihed, Opening Login
-goto DEC
 :DEC
 :CCC
+echo %PWDER%>"C:\PassProtectModule\%Project%\%filename%.pwd"
+echo %KEYER%>"C:\PassProtectModule\%Project%\%filename%.key"
 title 
 echo %Project% / Login
 cls
 echo %Project% / Login
-if not exist "C:\PassProtectModule\%Project%\%filename%.pwd" goto ERRpwd
-if not exist "C:\PassProtectModule\%Project%\%filename%.key" goto ERRkey
-goto DEC2
-:ERRpwd
-echo ERROR: C:\PassProtectModule\%Project%\%filename%.pwd was not found
-pause
-goto DEC
-:ERRkey
-echo ERROR: C:\PassProtectModule\%Project%\%filename%.key was not found
-pause
-goto DEC
 :DEC2
+echo %PWDER%>"C:\PassProtectModule\%Project%\%filename%.pwd"
+echo %KEYER%>"C:\PassProtectModule\%Project%\%filename%.key"
 cls
 echo %Project% \ Loader
 echo.
