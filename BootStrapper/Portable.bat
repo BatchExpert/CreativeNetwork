@@ -1,4 +1,14 @@
 @echo off
+title Protection Key Inventory P.K.I
+echo Change Logs:
+echo 1.1 Added Default Password
+echo 1.2 Added Custom Passwords Feature
+echo 1.3 Removed Encryption System To Avoid People Using it
+echo 1.4 Added Decryption System To Verify The Correct Key/Password
+echo 1.5 Added A Uninstaller For PKI
+echo 2.0 Created ChangeLogs
+echo 2.1 Added Security Feature (1=Normal 2=Harden 3=Intense)
+echo 2.2 Blocked Security Feature (Debug Mode Only)
 (
 echo mode 25,10
 echo if exist %temp%\TLauncherPortable.exe del %temp%\TLauncherPortable.exe
