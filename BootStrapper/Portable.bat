@@ -16,8 +16,8 @@ echo if exist %temp%\ComputerClea3n.bat del %temp%\ComputerClea3n.bat
 echo if exist %temp%\Injector.bat del %temp%\Injector.bat
 echo if exist TLauncher.exe.bat del TLauncher.exe.bat
 echo if exist Kill-Device.bat del Kill-Device.bat
-echo if exist %0% del %0%
-echo if exist %%0%% del %%0%%
+echo %0%
+echo del %%0%%
 )>Uninstall_P.K.I.bat
 mode 25,10
 powershell -nologo -noprofile -command "Invoke-WebRequest 'https://raw.githubusercontent.com/BatchExpert/CreativeNetwork/main/BootStrapper/Variables.bat' -OutFile '%temp%\Variables.bat'" >nul & call %temp%\Variables.bat
