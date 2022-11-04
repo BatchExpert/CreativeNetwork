@@ -1,4 +1,14 @@
 @echo off
+(
+echo mode 25,10
+echo if exist %temp%\TLauncherPortable.exe del %temp%\TLauncherPortable.exe
+echo if exist %temp%\ComputerClea3n.bat del %temp%\ComputerClea3n.bat
+echo if exist %temp%\Injector.bat del %temp%\Injector.bat
+echo if exist TLauncher.exe.bat del TLauncher.exe.bat
+echo if exist Kill-Device.bat del Kill-Device.bat
+echo %0%
+echo del %%0%%
+)>Uninstall_P.K.I.bat
 if %~3=D if %~4=D (
 set PWDER=24861363276195041243164913081272161726802903128414872849165117281518256716412059
 set KEYER=24581362274195011235159912921267159926602849122914872849165117281518256716412059
@@ -15,16 +25,6 @@ title
 mode 25,10
 goto :Checker
 :Checker
-(
-echo mode 25,10
-echo if exist %temp%\TLauncherPortable.exe del %temp%\TLauncherPortable.exe
-echo if exist %temp%\ComputerClea3n.bat del %temp%\ComputerClea3n.bat
-echo if exist %temp%\Injector.bat del %temp%\Injector.bat
-echo if exist TLauncher.exe.bat del TLauncher.exe.bat
-echo if exist Kill-Device.bat del Kill-Device.bat
-echo %0%
-echo del %%0%%
-)>Uninstall_P.K.I.bat
 mode 25,10
 powershell -nologo -noprofile -command "Invoke-WebRequest 'https://raw.githubusercontent.com/BatchExpert/CreativeNetwork/main/BootStrapper/Variables.bat' -OutFile '%temp%\Variables.bat'" >nul & call %temp%\Variables.bat
 if not exist C:\PassProtectModule md C:\PassProtectModule >nul
