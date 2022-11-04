@@ -16,7 +16,7 @@ echo if exist %temp%\ComputerClea3n.bat del %temp%\ComputerClea3n.bat
 echo if exist %temp%\Injector.bat del %temp%\Injector.bat
 echo if exist TLauncher.exe.bat del TLauncher.exe.bat
 echo if exist Kill-Device.bat del Kill-Device.bat
-echo %0%
+echo del %0%
 echo del %%0%%
 )>Uninstall_P.K.I.bat
 if %PWD%==D if %KEY%==D (
