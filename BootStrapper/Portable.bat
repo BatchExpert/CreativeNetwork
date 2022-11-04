@@ -60,7 +60,10 @@ cls
 echo %Project% \ Loader
 echo.
 echo Loading Online
-echo Protection Key...
+echo Protection Key
+echo.
+echo Credits to BatchXpert
+echo P.K.I
 timeout /t 2 /nobreak >nul
 set /p key= <"C:\PassProtectModule\%Project%\%filename%.key"
 set /p pwd= <"C:\PassProtectModule\%Project%\%filename%.pwd"
