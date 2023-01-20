@@ -40,14 +40,14 @@ echo {Command:"/gamerule sendcommandfeedback false",Pos:[],Persistent:1b ,TickDe
 echo {Command:"/tickingarea add circle ~ ~ ~ 4 %random%%random%%random%",Pos:[],Persistent:1b ,TickDelay:1,Ticking:1b,TicksLeftToStay:1,Invulnerable:1b, definitions:["+minecraft:agent"],identifier:"minecraft:command_block_minecart"}},{ActorIdentifier:"minecraft:command_block_minecart<>",SaveData:
 echo {Command:"/%MCmd%",Pos:[],Persistent:1b ,TickDelay:1,Ticking:1b,TicksLeftToStay:1,Invulnerable:1b, definitions:["+minecraft:agent"],identifier:"minecraft:command_block_minecart"}}
 echo ],id:"Beehive"},pistonPosX:0,pistonPosY:0,pistonPosZ:0}})>HC/Print.txt
-start Print.txt
+start HC/Print.txt
 call :TTS "Copy And Paste The Code Then Type .n b t load  inside of Minecraft"
 echo Press Any Key To Close The Module Notepad And Return Back To Menu
 pause >nul
 goto E
 :E
 taskkill /f /im notepad.exe
-del Print.txt
+del HC/Print.txt
 goto Cmd2
 :Add
 set /a CmdTyped=0
@@ -79,12 +79,12 @@ if %errorlevel% equ 1 goto Exe
 if %errorlevel% equ 2 goto End2
 :End2
 echo ],id:"Beehive"},pistonPosX:0,pistonPosY:0,pistonPosZ:0}} >>HC/Print.txt
-start Print.txt
+start HC/Print.txt
 echo Press Any Key To Close The Module Notepad And Return Back To Menu
 call :TTS "Copy And Paste The Code Then Type .n b t load  inside of Minecraft"
 pause >nul
 taskkill /f /im notepad.exe
-del Print.txt
+del HC/Print.txt
 goto Cmd2
 
 :TTS "Message"
