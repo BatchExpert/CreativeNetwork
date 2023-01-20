@@ -1,8 +1,16 @@
 @echo off
+if not exist C:\"Program Files"\WindowsApps\Microsoft.MinecraftUWP_1.19.5101.0_x64__8wekyb3d8bbwe\Minecraft.Windows.exe (
+title System Error - No Minecraft Was Found
+echo.
+echo !Error! Please Install Minecraft Bedrock edition
+echo.
+timeout /t 2 /nobreak >nul
+taskkill /f /im cmd.exe
+exit /b
+)
 title HCBM - Minecraft Commands
 cls
 timeout /t 1 /nobreak >nul
-start C:\"Program Files"\WindowsApps\Microsoft.MinecraftUWP_1.19.5101.0_x64__8wekyb3d8bbwe\Minecraft.Windows.exe
 :Cmd2
 if not exist H.exe set "Status=Download Required"
 if exist H.exe set "Status=Execute"
