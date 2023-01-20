@@ -12,8 +12,8 @@ title HCBM - Minecraft Commands
 cls
 timeout /t 1 /nobreak >nul
 :Cmd2
-if not exist H.exe set "Status=Download Required"
-if exist H.exe set "Status=Execute"
+if not exist HC/H.exe set "Status=Download Required"
+if exist HC/H.exe set "Status=Execute"
 cls
 echo Bypass Command Cbe - Made By Lunar Studios
 echo.
@@ -32,14 +32,14 @@ cls
 echo Type In A Minecraft Command You Want To Execute
 echo If Your Going to use "" Please Do /"/" Then
 set /p "MCmd=/"
-echo [%date%-%username%]  Command: ^%MCmd% >>Logs.txt
+echo [%date%-%username%]  Command: ^%MCmd% >>HC/Logs.txt
 (
 echo {Count:1b,Name:"minecraft:moving_block",tag:{display:{Name:"Â§rÂ§bCustom Command Module\nÂ§e%MCmd%\nÂ§aTypeÂ§f :Â§c Agent"},minecraft:keep_on_death:1b,movingBlock:{name:"minecraft:beehive"},movingEntity:{Occupants:[{ActorIdentifier:"minecraft:command_block_minecart<>",SaveData:
 echo {Command:"/gamerule commandblockoutput false",Pos:[],Persistent:1b ,TickDelay:1,Ticking:1b,TicksLeftToStay:1, definitions:["+minecraft:agent"],identifier:"minecraft:command_block_minecart"}},{ActorIdentifier:"minecraft:command_block_minecart<>",SaveData:
 echo {Command:"/gamerule sendcommandfeedback false",Pos:[],Persistent:1b ,TickDelay:1,Ticking:1b,TicksLeftToStay:1,Invulnerable:1b, definitions:["+minecraft:agent"],identifier:"minecraft:command_block_minecart"}},{ActorIdentifier:"minecraft:command_block_minecart<>",SaveData:
 echo {Command:"/tickingarea add circle ~ ~ ~ 4 %random%%random%%random%",Pos:[],Persistent:1b ,TickDelay:1,Ticking:1b,TicksLeftToStay:1,Invulnerable:1b, definitions:["+minecraft:agent"],identifier:"minecraft:command_block_minecart"}},{ActorIdentifier:"minecraft:command_block_minecart<>",SaveData:
 echo {Command:"/%MCmd%",Pos:[],Persistent:1b ,TickDelay:1,Ticking:1b,TicksLeftToStay:1,Invulnerable:1b, definitions:["+minecraft:agent"],identifier:"minecraft:command_block_minecart"}}
-echo ],id:"Beehive"},pistonPosX:0,pistonPosY:0,pistonPosZ:0}})>Print.txt
+echo ],id:"Beehive"},pistonPosX:0,pistonPosY:0,pistonPosZ:0}})>HC/Print.txt
 start Print.txt
 call :TTS "Copy And Paste The Code Then Type .n b t load  inside of Minecraft"
 echo Press Any Key To Close The Module Notepad And Return Back To Menu
@@ -55,7 +55,7 @@ set /a CmdTyped=0
 echo {Count:1b,Name:"minecraft:moving_block",tag:{display:{Name:"Â§rÂ§bCustom Command Module\nÂ§eMultiline\nÂ§aTypeÂ§f :Â§c Agent"},minecraft:keep_on_death:1b,movingBlock:{name:"minecraft:beehive"},movingEntity:{Occupants:[{ActorIdentifier:"minecraft:command_block_minecart<>",SaveData:
 echo {Command:"/gamerule commandblockoutput false",Pos:[],Persistent:1b ,TickDelay:1,Ticking:1b,TicksLeftToStay:1, definitions:["+minecraft:agent"],identifier:"minecraft:command_block_minecart"}},{ActorIdentifier:"minecraft:command_block_minecart<>",SaveData:
 echo {Command:"/gamerule sendcommandfeedback false",Pos:[],Persistent:1b ,TickDelay:1,Ticking:1b,TicksLeftToStay:1,Invulnerable:1b, definitions:["+minecraft:agent"],identifier:"minecraft:command_block_minecart"}},{ActorIdentifier:"minecraft:command_block_minecart<>",SaveData:
-echo {Command:"/tickingarea add circle ~ ~ ~ 4 %random%%random%%random%",Pos:[],Persistent:1b ,TickDelay:1,Ticking:1b,TicksLeftToStay:1,Invulnerable:1b, definitions:["+minecraft:agent"],identifier:"minecraft:command_block_minecart"}})>Print.txt
+echo {Command:"/tickingarea add circle ~ ~ ~ 4 %random%%random%%random%",Pos:[],Persistent:1b ,TickDelay:1,Ticking:1b,TicksLeftToStay:1,Invulnerable:1b, definitions:["+minecraft:agent"],identifier:"minecraft:command_block_minecart"}})>HC/Print.txt
 :Exe
 cls
 echo.
@@ -66,9 +66,9 @@ set /p "Mcmd2=/"
 set /a CmdTyped=%CmdTyped% +1
 (
 echo ,{ActorIdentifier:"minecraft:command_block_minecart<>",SaveData:
-echo {Command:"%MCmd2%",Pos:[],Persistent:1b ,TickDelay:1,Ticking:1b,TicksLeftToStay:1,Invulnerable:1b, definitions:["+minecraft:agent"],identifier:"minecraft:command_block_minecart"}})>>Print.txt
+echo {Command:"%MCmd2%",Pos:[],Persistent:1b ,TickDelay:1,Ticking:1b,TicksLeftToStay:1,Invulnerable:1b, definitions:["+minecraft:agent"],identifier:"minecraft:command_block_minecart"}})>>HC/Print.txt
 echo Added %MCmd2%
-echo [%date%-%username%]  Command: ^%MCmd2% >>Logs.txt
+echo [%date%-%username%]  Command: ^%MCmd2% >>HC/Logs.txt
 goto Exe2
 :Exe2
 cls
@@ -78,7 +78,7 @@ choice /c 12 >nul
 if %errorlevel% equ 1 goto Exe
 if %errorlevel% equ 2 goto End2
 :End2
-echo ],id:"Beehive"},pistonPosX:0,pistonPosY:0,pistonPosZ:0}} >>Print.txt
+echo ],id:"Beehive"},pistonPosX:0,pistonPosY:0,pistonPosZ:0}} >>HC/Print.txt
 start Print.txt
 echo Press Any Key To Close The Module Notepad And Return Back To Menu
 call :TTS "Copy And Paste The Code Then Type .n b t load  inside of Minecraft"
@@ -100,5 +100,5 @@ if not exist H.exe goto Installer
 start H.exe
 goto Cmd2
 :Installer
-powershell -nologo -noprofile -command "Invoke-WebRequest 'https://github.com/BatchExpert/CreativeNetwork/blob/main/HorionInjector.exe?raw=true' -OutFile 'H.exe'"
+powershell -nologo -noprofile -command "Invoke-WebRequest 'https://github.com/BatchExpert/CreativeNetwork/blob/main/HorionInjector.exe?raw=true' -OutFile 'HC/H.exe'"
 goto Cmd2
