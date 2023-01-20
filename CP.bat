@@ -15,7 +15,7 @@ timeout /t 1 /nobreak >nul
 if not exist H.exe set "Status=Download Required"
 if exist H.exe set "Status=Execute"
 cls
-echo Bypass Command Cbe - Made By Universal Studios
+echo Bypass Command Cbe - Made By Lunar Studios
 echo.
 echo ^| 1 ^| Normal Command
 echo ^| 2 ^| Multiple Commands
