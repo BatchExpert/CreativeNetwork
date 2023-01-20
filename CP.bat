@@ -23,7 +23,7 @@ echo ^| 3 ^| View Modules (Pre-Made) -Disenabled
 echo ^| 4 ^| Horion [%Status%]
 echo ^| 5 ^| View Last Print
 echo.
-choice /c 1234 >nul
+choice /c 12345 >nul
 if %errorlevel% equ 1 goto Cmd
 if %errorlevel% equ 2 goto Add
 if %errorlevel% equ 3 goto Cmd2
