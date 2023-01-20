@@ -132,7 +132,7 @@ exit
 exit
 :Logs
 cls
-type HC/Logs.txt
+type HC\Logs.txt
 echo.
 echo Type Any Key To Return To The Menu
 pause >nul
