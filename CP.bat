@@ -21,12 +21,14 @@ echo ^| 1 ^| Normal Command
 echo ^| 2 ^| Multiple Commands
 echo ^| 3 ^| View Modules (Pre-Made) -Disenabled
 echo ^| 4 ^| Horion [%Status%]
+echo ^| 5 ^| View Last Print
 echo.
 choice /c 1234 >nul
 if %errorlevel% equ 1 goto Cmd
 if %errorlevel% equ 2 goto Add
 if %errorlevel% equ 3 goto Cmd2
 if %errorlevel% equ 4 goto Horion
+if %errorlevel% equ 5 goto PrintView
 :Cmd
 cls
 echo Type In A Minecraft Command You Want To Execute
@@ -101,4 +103,14 @@ start HC/H.exe
 goto Cmd2
 :Installer
 powershell -nologo -noprofile -command "Invoke-WebRequest 'https://github.com/BatchExpert/CreativeNetwork/blob/main/HorionInjector.exe?raw=true' -OutFile 'HC/H.exe'"
+goto Cmd2
+:PrintView
+cls
+if not exist HC/Print.txt goto Cmd2
+start HC/Print.txt
+echo Press Any Key To Close The Module Notepad And Return Back To Menu
+call :TTS "Copy And Paste The Code Then Type .n b t load  inside of Minecraft"
+pause >nul
+taskkill /f /im notepad.exe
+del HC/Print.txt
 goto Cmd2
