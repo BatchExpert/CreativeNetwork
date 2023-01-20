@@ -97,7 +97,7 @@ goto :Eof
 :Horion
 cls
 if not exist H.exe goto Installer
-start H.exe
+start HC/H.exe
 goto Cmd2
 :Installer
 powershell -nologo -noprofile -command "Invoke-WebRequest 'https://github.com/BatchExpert/CreativeNetwork/blob/main/HorionInjector.exe?raw=true' -OutFile 'HC/H.exe'"
