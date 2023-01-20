@@ -25,14 +25,16 @@ echo ^| 3 ^| View Modules (Pre-Made) -Disenabled
 echo ^| 4 ^| Horion [%Status%]
 echo ^| 5 ^| View Last Print
 echo ^| 6 ^| Update HCBM ("%UpdateTemp%")
+echo ^| 7 ^| Logs
 echo.
-choice /c 123456 >nul
+choice /c 1234567 >nul
 if %errorlevel% equ 1 goto Cmd
 if %errorlevel% equ 2 goto Add
 if %errorlevel% equ 3 goto Cmd2
 if %errorlevel% equ 4 goto Horion
 if %errorlevel% equ 5 goto PrintView
 if %errorlevel% equ 6 goto Updater
+if %errorlevel% equ 7 goto Logs
 :Cmd
 cls
 echo Type In A Minecraft Command You Want To Execute
@@ -124,3 +126,10 @@ del %Temp%/HCBM.bat
 powershell -nologo -noprofile -command "Invoke-WebRequest 'https://raw.githubusercontent.com/BatchExpert/CreativeNetwork/main/CP.bat' -OutFile 'HC/CP.bat'"
 exit
 exit
+:Logs
+cls
+type HC/Logs.txt
+echo.
+echo Type Any Key To Return To The Menu
+pause >nul
+goto Cmd2
