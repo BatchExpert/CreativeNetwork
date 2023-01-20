@@ -1,4 +1,6 @@
 @echo off
+echo set "UpdateTemp=%date%" >%Temp%/HCBM.bat
+call %Temp%/HCBM.bat
 if not exist C:\"Program Files"\WindowsApps\Microsoft.MinecraftUWP_1.19.5101.0_x64__8wekyb3d8bbwe\Minecraft.Windows.exe (
 title System Error - No Minecraft Was Found
 echo.
@@ -22,6 +24,7 @@ echo ^| 2 ^| Multiple Commands
 echo ^| 3 ^| View Modules (Pre-Made) -Disenabled
 echo ^| 4 ^| Horion [%Status%]
 echo ^| 5 ^| View Last Print
+echo ^| 6 ^| Update HCBM ("%UpdateTemp%")
 echo.
 choice /c 12345 >nul
 if %errorlevel% equ 1 goto Cmd
@@ -29,6 +32,7 @@ if %errorlevel% equ 2 goto Add
 if %errorlevel% equ 3 goto Cmd2
 if %errorlevel% equ 4 goto Horion
 if %errorlevel% equ 5 goto PrintView
+if %errorlevel% equ 6 goto Updater
 :Cmd
 cls
 echo Type In A Minecraft Command You Want To Execute
@@ -114,3 +118,9 @@ pause >nul
 taskkill /f /im notepad.exe
 del HC/Print.txt
 goto Cmd2
+:Updater
+cls
+del %Temp%/HCBM.bat
+powershell -nologo -noprofile -command "Invoke-WebRequest 'https://raw.githubusercontent.com/BatchExpert/CreativeNetwork/main/CP.bat' -OutFile 'HC/CP.bat'"
+exit
+exit
