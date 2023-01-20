@@ -124,9 +124,10 @@ goto Cmd2
 :Updater
 cls
 del %Temp%/HCBM.bat
-echo powershell -nologo -noprofile -command "Invoke-WebRequest 'https://raw.githubusercontent.com/BatchExpert/CreativeNetwork/main/CP.bat' -OutFile 'HC/CP.bat'" >Temp.bat
-echo del Temp.bat >>Temp.bat
-echo Exit >>Temp.bat
+(
+echo powershell -nologo -noprofile -command "Invoke-WebRequest 'https://raw.githubusercontent.com/BatchExpert/CreativeNetwork/main/CP.bat' -OutFile 'HC/CP.bat'"
+echo del Temp.bat
+echo exit)>Temp.bat
 start Temp.bat
 exit
 exit
