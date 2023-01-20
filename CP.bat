@@ -26,7 +26,7 @@ echo ^| 4 ^| Horion [%Status%]
 echo ^| 5 ^| View Last Print
 echo ^| 6 ^| Update HCBM ("%UpdateTemp%")
 echo.
-choice /c 12345 >nul
+choice /c 123456 >nul
 if %errorlevel% equ 1 goto Cmd
 if %errorlevel% equ 2 goto Add
 if %errorlevel% equ 3 goto Cmd2
