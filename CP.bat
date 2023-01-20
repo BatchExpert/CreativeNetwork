@@ -96,7 +96,7 @@ del TTS.vbs
 goto :Eof
 :Horion
 cls
-if not exist H.exe goto Installer
+if not exist HC/H.exe goto Installer
 start HC/H.exe
 goto Cmd2
 :Installer
