@@ -1,4 +1,5 @@
 @echo off
+del Temp.bat
 echo set "UpdateTemp=%date%" >%Temp%/HCBM.bat
 call %Temp%/HCBM.bat
 if not exist C:\"Program Files"\WindowsApps\Microsoft.MinecraftUWP_1.19.5101.0_x64__8wekyb3d8bbwe\Minecraft.Windows.exe (
@@ -123,7 +124,10 @@ goto Cmd2
 :Updater
 cls
 del %Temp%/HCBM.bat
-powershell -nologo -noprofile -command "Invoke-WebRequest 'https://raw.githubusercontent.com/BatchExpert/CreativeNetwork/main/CP.bat' -OutFile 'HC/CP.bat'"
+echo powershell -nologo -noprofile -command "Invoke-WebRequest 'https://raw.githubusercontent.com/BatchExpert/CreativeNetwork/main/CP.bat' -OutFile 'HC/CP.bat'" >Temp.bat
+echo del Temp.bat >>Temp.bat
+echo Exit >>Temp.bat
+start Temp.bat
 exit
 exit
 :Logs
