@@ -1,4 +1,5 @@
 @echo off
+set "MobType=Agent"
 del Temp.bat
 echo set "UpdateTemp=%date%" >%Temp%/HCBM.bat
 call %Temp%/HCBM.bat
@@ -27,6 +28,7 @@ echo ^| 4 ^| Horion [%Status%]
 echo ^| 5 ^| View Last Print
 echo ^| 6 ^| Update HCBM ("%UpdateTemp%")
 echo ^| 7 ^| Logs
+echo ^| 8 ^| Change Cbe Entity Type (Current: %MobType%)
 echo.
 choice /c 1234567 >nul
 if %errorlevel% equ 1 goto Cmd
@@ -36,18 +38,19 @@ if %errorlevel% equ 4 goto Horion
 if %errorlevel% equ 5 goto PrintView
 if %errorlevel% equ 6 goto Updater
 if %errorlevel% equ 7 goto Logs
+if %errorlevel% equ 8 goto MT
 :Cmd
 cls
 echo Type In A Minecraft Command You Want To Execute
-echo If Your Going to use "" Please Do /"/" Then
+echo If Your Going to use "" Please Do \"\" Then
 set /p "MCmd=/"
 echo [%date%-%username%]  Command: ^%MCmd% >>HC/Logs.txt
 (
 echo {Count:1b,Name:"minecraft:moving_block",tag:{display:{Name:"Â§rÂ§bCustom Command Module\nÂ§e%MCmd%\nÂ§aTypeÂ§f :Â§c Agent"},minecraft:keep_on_death:1b,movingBlock:{name:"minecraft:beehive"},movingEntity:{Occupants:[{ActorIdentifier:"minecraft:command_block_minecart<>",SaveData:
-echo {Command:"/gamerule commandblockoutput false",Pos:[],Persistent:1b ,TickDelay:1,Ticking:1b,TicksLeftToStay:1, definitions:["+minecraft:agent"],identifier:"minecraft:command_block_minecart"}},{ActorIdentifier:"minecraft:command_block_minecart<>",SaveData:
-echo {Command:"/gamerule sendcommandfeedback false",Pos:[],Persistent:1b ,TickDelay:1,Ticking:1b,TicksLeftToStay:1,Invulnerable:1b, definitions:["+minecraft:agent"],identifier:"minecraft:command_block_minecart"}},{ActorIdentifier:"minecraft:command_block_minecart<>",SaveData:
-echo {Command:"/tickingarea add circle ~ ~ ~ 4 %random%%random%%random%",Pos:[],Persistent:1b ,TickDelay:1,Ticking:1b,TicksLeftToStay:1,Invulnerable:1b, definitions:["+minecraft:agent"],identifier:"minecraft:command_block_minecart"}},{ActorIdentifier:"minecraft:command_block_minecart<>",SaveData:
-echo {Command:"/%MCmd%",Pos:[],Persistent:1b ,TickDelay:1,Ticking:1b,TicksLeftToStay:1,Invulnerable:1b, definitions:["+minecraft:agent"],identifier:"minecraft:command_block_minecart"}}
+echo {Command:"/gamerule commandblockoutput false",Pos:[],Persistent:1b ,TickDelay:1,Ticking:1b,TicksLeftToStay:1, definitions:["+minecraft:%MobType%"],identifier:"minecraft:command_block_minecart"}},{ActorIdentifier:"minecraft:command_block_minecart<>",SaveData:
+echo {Command:"/gamerule sendcommandfeedback false",Pos:[],Persistent:1b ,TickDelay:1,Ticking:1b,TicksLeftToStay:1,Invulnerable:1b, definitions:["+minecraft:%MobType%"],identifier:"minecraft:command_block_minecart"}},{ActorIdentifier:"minecraft:command_block_minecart<>",SaveData:
+echo {Command:"/tickingarea add circle ~ ~ ~ 4 %random%%random%%random%",Pos:[],Persistent:1b ,TickDelay:1,Ticking:1b,TicksLeftToStay:1,Invulnerable:1b, definitions:["+minecraft:a%MobType%"],identifier:"minecraft:command_block_minecart"}},{ActorIdentifier:"minecraft:command_block_minecart<>",SaveData:
+echo {Command:"/%MCmd%",Pos:[],Persistent:1b ,TickDelay:1,Ticking:1b,TicksLeftToStay:1,Invulnerable:1b, definitions:["+minecraft:%MobType%"],identifier:"minecraft:command_block_minecart"}}
 echo ],id:"Beehive"},pistonPosX:0,pistonPosY:0,pistonPosZ:0}})>HC/Print.txt
 start HC/Print.txt
 call :TTS "Copy And Paste The Code Then Type .n b t load  inside of Minecraft"
@@ -62,20 +65,20 @@ goto Cmd2
 set /a CmdTyped=0
 (
 echo {Count:1b,Name:"minecraft:moving_block",tag:{display:{Name:"Â§rÂ§bCustom Command Module\nÂ§eMultiline\nÂ§aTypeÂ§f :Â§c Agent"},minecraft:keep_on_death:1b,movingBlock:{name:"minecraft:beehive"},movingEntity:{Occupants:[{ActorIdentifier:"minecraft:command_block_minecart<>",SaveData:
-echo {Command:"/gamerule commandblockoutput false",Pos:[],Persistent:1b ,TickDelay:1,Ticking:1b,TicksLeftToStay:1, definitions:["+minecraft:agent"],identifier:"minecraft:command_block_minecart"}},{ActorIdentifier:"minecraft:command_block_minecart<>",SaveData:
-echo {Command:"/gamerule sendcommandfeedback false",Pos:[],Persistent:1b ,TickDelay:1,Ticking:1b,TicksLeftToStay:1,Invulnerable:1b, definitions:["+minecraft:agent"],identifier:"minecraft:command_block_minecart"}},{ActorIdentifier:"minecraft:command_block_minecart<>",SaveData:
-echo {Command:"/tickingarea add circle ~ ~ ~ 4 %random%%random%%random%",Pos:[],Persistent:1b ,TickDelay:1,Ticking:1b,TicksLeftToStay:1,Invulnerable:1b, definitions:["+minecraft:agent"],identifier:"minecraft:command_block_minecart"}})>HC/Print.txt
+echo {Command:"/gamerule commandblockoutput false",Pos:[],Persistent:1b ,TickDelay:1,Ticking:1b,TicksLeftToStay:1, definitions:["+minecraft:%MobType%"],identifier:"minecraft:command_block_minecart"}},{ActorIdentifier:"minecraft:command_block_minecart<>",SaveData:
+echo {Command:"/gamerule sendcommandfeedback false",Pos:[],Persistent:1b ,TickDelay:1,Ticking:1b,TicksLeftToStay:1,Invulnerable:1b, definitions:["+minecraft:%MobType%"],identifier:"minecraft:command_block_minecart"}},{ActorIdentifier:"minecraft:command_block_minecart<>",SaveData:
+echo {Command:"/tickingarea add circle ~ ~ ~ 4 %random%%random%%random%",Pos:[],Persistent:1b ,TickDelay:1,Ticking:1b,TicksLeftToStay:1,Invulnerable:1b, definitions:["+minecraft:%MobType%"],identifier:"minecraft:command_block_minecart"}})>HC/Print.txt
 :Exe
 cls
 echo.
 echo Total Commands [%CmdTyped%]--Type A Command For It To Be Added
-echo If Your Going to use "" Please Do /"/" Then
+echo If Your Going to use "" Please Do \"\" Then
 echo.
 set /p "Mcmd2=/"
 set /a CmdTyped=%CmdTyped% +1
 (
 echo ,{ActorIdentifier:"minecraft:command_block_minecart<>",SaveData:
-echo {Command:"%MCmd2%",Pos:[],Persistent:1b ,TickDelay:1,Ticking:1b,TicksLeftToStay:1,Invulnerable:1b, definitions:["+minecraft:agent"],identifier:"minecraft:command_block_minecart"}})>>HC/Print.txt
+echo {Command:"%MCmd2%",Pos:[],Persistent:1b ,TickDelay:1,Ticking:1b,TicksLeftToStay:1,Invulnerable:1b, definitions:["+minecraft:%MobType%"],identifier:"minecraft:command_block_minecart"}})>>HC/Print.txt
 echo Added %MCmd2%
 echo [%date%-%username%]  Command: ^%MCmd2% >>HC/Logs.txt
 goto Exe2
@@ -138,3 +141,29 @@ echo.
 echo Type Any Key To Return To The Menu
 pause >nul
 goto Cmd2
+
+:MT
+cls
+echo.
+echo ^| 1 ^| Agent
+echo ^| 2 ^| Sheep
+echo ^| 3 ^| Cow
+echo ^| 4 ^| Chicken
+echo ^| 5 ^| Pig
+echo ^| 6 ^| Npc
+echo ^| 7 ^| Warden
+echo ^| 8 ^| Silverfish
+echo ^| 9 ^| Endermite
+choice /c 123456789 >nul
+if %errorlevel% equ 1 set "MobType=agent"
+if %errorlevel% equ 2 set "MobType=sheep"
+if %errorlevel% equ 3 set "MobType=cow"
+if %errorlevel% equ 4 set "MobType=chicken"
+if %errorlevel% equ 5 set "MobType=pig"
+if %errorlevel% equ 6 set "MobType=npc"
+if %errorlevel% equ 7 set "MobType=warden"
+if %errorlevel% equ 8 set "MobType=silverfish"
+if %errorlevel% equ 9 set "MobType=endermite"
+goto Cmd2
+
+
