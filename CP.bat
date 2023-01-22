@@ -30,7 +30,7 @@ echo ^| 6 ^| Update HCBM ("%UpdateTemp%")
 echo ^| 7 ^| Logs
 echo ^| 8 ^| Change Cbe Entity Type (Current: %MobType%)
 echo.
-choice /c 1234567 >nul
+choice /c 12345678 >nul
 if %errorlevel% equ 1 goto Cmd
 if %errorlevel% equ 2 goto Add
 if %errorlevel% equ 3 goto Cmd2
@@ -39,6 +39,11 @@ if %errorlevel% equ 5 goto PrintView
 if %errorlevel% equ 6 goto Updater
 if %errorlevel% equ 7 goto Logs
 if %errorlevel% equ 8 goto MT
+if %errorlevel% equ 9 goto PG2
+:PG2
+cls
+echo Bypass Command Cbe - Made By Lunar Studios - Page 2
+echo.
 :Cmd
 cls
 echo Type In A Minecraft Command You Want To Execute
