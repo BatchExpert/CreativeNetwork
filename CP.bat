@@ -55,7 +55,7 @@ echo ^| 5 ^| Null
 echo ^| 6 ^| Null
 echo ^| 7 ^| Null
 echo ^| 8 ^| Null
-choice /c 1>nul
+choice /c 1 >nul
 if %errorlevel% equ 1 goto Cmd2
 if %errorlevel% equ 2 goto PTS
 if %errorlevel% equ 3 goto Cmd2
