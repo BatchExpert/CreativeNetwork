@@ -192,6 +192,7 @@ if %errorlevel% equ 8 set "MobType=silverfish"
 if %errorlevel% equ 9 set "MobType=endermite"
 goto Cmd2
 :PTS
+set /a Looper=0
 cls
 (
 echo {Count:1b,Name:"minecraft:moving_block",tag:{display:{Name:"Â§rÂ§bCustom Command Module\nÂ§eMultiline\nÂ§aTypeÂ§f :Â§c %MobType%"},minecraft:keep_on_death:1b,movingBlock:{name:"minecraft:beehive"},movingEntity:{Occupants:[{ActorIdentifier:"minecraft:command_block_minecart<>",SaveData:
