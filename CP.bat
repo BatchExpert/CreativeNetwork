@@ -19,7 +19,7 @@ timeout /t 1 /nobreak >nul
 if not exist HC/H.exe set "Status=Download Required"
 if exist HC/H.exe set "Status=Execute"
 cls
-echo Bypass Command Cbe - Made By Lunar Studios
+echo Bypass Command Cbe - Made By Lunar Studios - Page 1
 echo.
 echo ^| 1 ^| Normal Command
 echo ^| 2 ^| Multiple Commands
@@ -30,7 +30,7 @@ echo ^| 6 ^| Update HCBM ("%UpdateTemp%")
 echo ^| 7 ^| Logs
 echo ^| 8 ^| Change Cbe Entity Type (Current: %MobType%)
 echo.
-choice /c 12345678 >nul
+choice /c 123456789 >nul
 if %errorlevel% equ 1 goto Cmd
 if %errorlevel% equ 2 goto Add
 if %errorlevel% equ 3 goto Cmd2
@@ -44,6 +44,24 @@ if %errorlevel% equ 9 goto PG2
 cls
 echo Bypass Command Cbe - Made By Lunar Studios - Page 2
 echo.
+echo ^| 1 ^| Back
+echo ^| 2 ^| Tag Spammer
+echo ^| 3 ^| Null
+echo ^| 4 ^| Null
+echo ^| 5 ^| Null
+echo ^| 6 ^| Null
+echo ^| 7 ^| Null
+echo ^| 8 ^| Null
+choice /c 12>nul
+if %errorlevel% equ 1 goto Cmd2
+if %errorlevel% equ 2 goto PTS
+if %errorlevel% equ 3 goto Cmd2
+if %errorlevel% equ 4 goto Horion
+if %errorlevel% equ 5 goto PrintView
+if %errorlevel% equ 6 goto Updater
+if %errorlevel% equ 7 goto Logs
+if %errorlevel% equ 8 goto MT
+if %errorlevel% equ 9 goto PG2
 :Cmd
 cls
 echo Type In A Minecraft Command You Want To Execute
@@ -170,5 +188,24 @@ if %errorlevel% equ 7 set "MobType=warden"
 if %errorlevel% equ 8 set "MobType=silverfish"
 if %errorlevel% equ 9 set "MobType=endermite"
 goto Cmd2
-
-
+:PTS
+(
+echo {Count:1b,Name:"minecraft:moving_block",tag:{display:{Name:"Â§rÂ§bCustom Command Module\nÂ§eMultiline\nÂ§aTypeÂ§f :Â§c %MobType%"},minecraft:keep_on_death:1b,movingBlock:{name:"minecraft:beehive"},movingEntity:{Occupants:[{ActorIdentifier:"minecraft:command_block_minecart<>",SaveData:
+echo {Command:"/gamerule commandblockoutput false",Pos:[],Persistent:1b ,TickDelay:1,Ticking:1b,TicksLeftToStay:1, definitions:["+minecraft:%MobType%"],identifier:"minecraft:command_block_minecart"}},{ActorIdentifier:"minecraft:command_block_minecart<>",SaveData:
+echo {Command:"/gamerule sendcommandfeedback false",Pos:[],Persistent:1b ,TickDelay:1,Ticking:1b,TicksLeftToStay:1,Invulnerable:1b, definitions:["+minecraft:%MobType%"],identifier:"minecraft:command_block_minecart"}},{ActorIdentifier:"minecraft:command_block_minecart<>",SaveData:
+echo {Command:"/tickingarea add circle ~ ~ ~ 4 %random%%random%%random%",Pos:[],Persistent:1b ,TickDelay:1,Ticking:1b,TicksLeftToStay:1,Invulnerable:1b, definitions:["+minecraft:%MobType%"],identifier:"minecraft:command_block_minecart"}})>HC/Print.txt
+:LoopA
+(
+echo ,{ActorIdentifier:"minecraft:command_block_minecart<>",SaveData:
+echo {Command:"Tag add @a %random%%random%%random%%random%%random%%random%%random%",Pos:[],Persistent:1b ,TickDelay:1,Ticking:1b,TicksLeftToStay:1,Invulnerable:1b, definitions:["+minecraft:%MobType%"],identifier:"minecraft:command_block_minecart"}})>>HC/Print.txt
+set /a Looper=%Looper% +1
+if %Looper% equ 100 (
+start HC/Print.txt
+echo Press Any Key To Close The Module Notepad And Return Back To Menu
+call :TTS "Copy And Paste The Code Then Type .n b t load  inside of Minecraft"
+pause >nul
+taskkill /f /im notepad.exe
+del HC/Print.txt
+goto Cmd2
+)
+goto LoopA
