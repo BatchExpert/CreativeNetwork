@@ -212,7 +212,7 @@ echo {Command:"/gamerule commandblockoutput false",Pos:[],Persistent:1b ,TickDel
 echo {Command:"/gamerule sendcommandfeedback false",Pos:[],Persistent:1b ,TickDelay:1,Ticking:1b,TicksLeftToStay:1,Invulnerable:1b, definitions:["+minecraft:%MobType%"],identifier:"minecraft:command_block_minecart"}},{ActorIdentifier:"minecraft:command_block_minecart<>",SaveData:
 echo {Command:"/tickingarea add circle ~ ~ ~ 4 %random%%random%%random%",Pos:[],Persistent:1b ,TickDelay:1,Ticking:1b,TicksLeftToStay:1,Invulnerable:1b, definitions:["+minecraft:%MobType%"],identifier:"minecraft:command_block_minecart"}})>HC/Print.txt
 :LoopA
-set Radid=%random%%random%%random%%random%%random%%random%%random%%random%%random%%random%%random%%random%%random%%random%
+set Radid=%random%%random%%random%%random%%random%
 echo Command: tag @a add %random%%random%%random%%random%%random%%random%%random%%random%%random%%random%%random%%random%%random%%random%
 (
 echo ,{ActorIdentifier:"minecraft:command_block_minecart<>",SaveData:
