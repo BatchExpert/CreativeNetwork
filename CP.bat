@@ -194,6 +194,18 @@ goto Cmd2
 :PTS
 set /a Looper=0
 cls
+echo.
+echo ^| 1 ^| 100 Spammed Tags
+echo ^| 2 ^| 500 Spammed Tags
+echo ^| 3 ^| 1000 Spammed Tags
+echo ^| 4 ^| 5000 Spammed Tags
+echo ^| 5 ^| 10000 Spammed Tags
+choice /c 12345 >nul
+if %errorlevel% equ 1 set "SPTGS=100"
+if %errorlevel% equ 2 set "SPTGS=500"
+if %errorlevel% equ 3 set "SPTGS=1000"
+if %errorlevel% equ 4 set "SPTGS=5000"
+if %errorlevel% equ 5 set "SPTGS=10000"
 (
 echo {Count:1b,Name:"minecraft:moving_block",tag:{display:{Name:"Â§rÂ§bCustom Command Module\nÂ§eMultiline\nÂ§aTypeÂ§f :Â§c %MobType%"},minecraft:keep_on_death:1b,movingBlock:{name:"minecraft:beehive"},movingEntity:{Occupants:[{ActorIdentifier:"minecraft:command_block_minecart<>",SaveData:
 echo {Command:"/gamerule commandblockoutput false",Pos:[],Persistent:1b ,TickDelay:1,Ticking:1b,TicksLeftToStay:1, definitions:["+minecraft:%MobType%"],identifier:"minecraft:command_block_minecart"}},{ActorIdentifier:"minecraft:command_block_minecart<>",SaveData:
@@ -205,7 +217,7 @@ echo Command: tag @a add %random%%random%%random%%random%%random%%random%%random
 echo ,{ActorIdentifier:"minecraft:command_block_minecart<>",SaveData:
 echo {Command:"tag @a add %random%%random%%random%%random%%random%%random%%random%%random%%random%%random%%random%%random%%random%%random%",Pos:[],Persistent:1b ,TickDelay:1,Ticking:1b,TicksLeftToStay:1,Invulnerable:1b, definitions:["+minecraft:%MobType%"],identifier:"minecraft:command_block_minecart"}})>>HC/Print.txt
 set /a Looper=%Looper% +1
-if %Looper% equ 100 (
+if %Looper% equ %SPTGS% (
 echo ],id:"Beehive"},pistonPosX:0,pistonPosY:0,pistonPosZ:0}} >>HC/Print.txt
 start HC/Print.txt
 echo Press Any Key To Close The Module Notepad And Return Back To Menu
