@@ -29,8 +29,10 @@ echo ^| 5 ^| View Last Print
 echo ^| 6 ^| Update HCBM ("%UpdateTemp%")
 echo ^| 7 ^| Logs
 echo ^| 8 ^| Change Cbe Entity Type (Current: %MobType%)
+echo ^| 9 ^| Tag Spammer
+echo ^| 0 ^| Page 2
 echo.
-choice /c 123456789 >nul
+choice /c 1234567890 >nul
 if %errorlevel% equ 1 goto Cmd
 if %errorlevel% equ 2 goto Add
 if %errorlevel% equ 3 goto Cmd2
@@ -39,20 +41,21 @@ if %errorlevel% equ 5 goto PrintView
 if %errorlevel% equ 6 goto Updater
 if %errorlevel% equ 7 goto Logs
 if %errorlevel% equ 8 goto MT
-if %errorlevel% equ 9 goto PG2
+if %errorlevel% equ 9 goto PTS
+if %errorlevel% equ 10 goto PG2
 :PG2
 cls
 echo Bypass Command Cbe - Made By Lunar Studios - Page 2
 echo.
 echo ^| 1 ^| Back
-echo ^| 2 ^| Tag Spammer
+echo ^| 2 ^| Null
 echo ^| 3 ^| Null
 echo ^| 4 ^| Null
 echo ^| 5 ^| Null
 echo ^| 6 ^| Null
 echo ^| 7 ^| Null
 echo ^| 8 ^| Null
-choice /c 12>nul
+choice /c 1>nul
 if %errorlevel% equ 1 goto Cmd2
 if %errorlevel% equ 2 goto PTS
 if %errorlevel% equ 3 goto Cmd2
@@ -189,17 +192,20 @@ if %errorlevel% equ 8 set "MobType=silverfish"
 if %errorlevel% equ 9 set "MobType=endermite"
 goto Cmd2
 :PTS
+cls
 (
 echo {Count:1b,Name:"minecraft:moving_block",tag:{display:{Name:"Â§rÂ§bCustom Command Module\nÂ§eMultiline\nÂ§aTypeÂ§f :Â§c %MobType%"},minecraft:keep_on_death:1b,movingBlock:{name:"minecraft:beehive"},movingEntity:{Occupants:[{ActorIdentifier:"minecraft:command_block_minecart<>",SaveData:
 echo {Command:"/gamerule commandblockoutput false",Pos:[],Persistent:1b ,TickDelay:1,Ticking:1b,TicksLeftToStay:1, definitions:["+minecraft:%MobType%"],identifier:"minecraft:command_block_minecart"}},{ActorIdentifier:"minecraft:command_block_minecart<>",SaveData:
 echo {Command:"/gamerule sendcommandfeedback false",Pos:[],Persistent:1b ,TickDelay:1,Ticking:1b,TicksLeftToStay:1,Invulnerable:1b, definitions:["+minecraft:%MobType%"],identifier:"minecraft:command_block_minecart"}},{ActorIdentifier:"minecraft:command_block_minecart<>",SaveData:
 echo {Command:"/tickingarea add circle ~ ~ ~ 4 %random%%random%%random%",Pos:[],Persistent:1b ,TickDelay:1,Ticking:1b,TicksLeftToStay:1,Invulnerable:1b, definitions:["+minecraft:%MobType%"],identifier:"minecraft:command_block_minecart"}})>HC/Print.txt
 :LoopA
+echo Command: tag @a add %random%%random%%random%%random%%random%%random%%random%%random%%random%%random%%random%%random%%random%%random%
 (
 echo ,{ActorIdentifier:"minecraft:command_block_minecart<>",SaveData:
-echo {Command:"Tag add @a %random%%random%%random%%random%%random%%random%%random%",Pos:[],Persistent:1b ,TickDelay:1,Ticking:1b,TicksLeftToStay:1,Invulnerable:1b, definitions:["+minecraft:%MobType%"],identifier:"minecraft:command_block_minecart"}})>>HC/Print.txt
+echo {Command:"tag @a add %random%%random%%random%%random%%random%%random%%random%%random%%random%%random%%random%%random%%random%%random%",Pos:[],Persistent:1b ,TickDelay:1,Ticking:1b,TicksLeftToStay:1,Invulnerable:1b, definitions:["+minecraft:%MobType%"],identifier:"minecraft:command_block_minecart"}})>>HC/Print.txt
 set /a Looper=%Looper% +1
 if %Looper% equ 100 (
+echo ],id:"Beehive"},pistonPosX:0,pistonPosY:0,pistonPosZ:0}} >>HC/Print.txt
 start HC/Print.txt
 echo Press Any Key To Close The Module Notepad And Return Back To Menu
 call :TTS "Copy And Paste The Code Then Type .n b t load  inside of Minecraft"
