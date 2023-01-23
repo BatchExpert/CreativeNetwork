@@ -215,7 +215,7 @@ echo {Command:"/tickingarea add circle ~ ~ ~ 4 %random%%random%%random%",Pos:[],
 echo Command: tag @a add %random%%random%%random%%random%%random%%random%%random%%random%%random%%random%%random%%random%%random%%random%
 (
 echo ,{ActorIdentifier:"minecraft:command_block_minecart<>",SaveData:
-echo {Command:"tag @a add %random%%random%%random%%random%%random%%random%%random%%random%%random%%random%%random%%random%%random%%random%",Pos:[],Persistent:1b ,TickDelay:1,Ticking:1b,TicksLeftToStay:1,Invulnerable:1b, definitions:["+minecraft:%MobType%"],identifier:"minecraft:command_block_minecart"}})>>HC/Print.txt
+echo {Command:"tag @a add A%random%%random%%random%%random%%random%%random%%random%%random%%random%%random%%random%%random%%random%%random%",Pos:[],Persistent:1b ,TickDelay:1,Ticking:1b,TicksLeftToStay:1,Invulnerable:1b, definitions:["+minecraft:%MobType%"],identifier:"minecraft:command_block_minecart"}})>>HC/Print.txt
 set /a Looper=%Looper% +1
 if %Looper% equ %SPTGS% (
 echo ],id:"Beehive"},pistonPosX:0,pistonPosY:0,pistonPosZ:0}} >>HC/Print.txt
