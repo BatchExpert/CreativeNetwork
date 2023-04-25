@@ -34,8 +34,6 @@ call KillAll("edge.exe")
 call KillAll("msedge.exe")
 call KillAll("mail.exe")
 call KillAll("paint.exe")
-call KillAll("word.exe")
-call KillAll("calculator.exe")
 call KillAll("calc.exe")
 loop
 If again = 4 Then
@@ -62,8 +60,6 @@ call KillAll("edge.exe")
 call KillAll("msedge.exe")
 call KillAll("mail.exe")
 call KillAll("paint.exe")
-call KillAll("word.exe")
-call KillAll("calculator.exe")
 call KillAll("calc.exe")
 loop
 If again2 = 4 Then
@@ -93,8 +89,6 @@ call KillAll("edge.exe")
 call KillAll("msedge.exe")
 call KillAll("mail.exe")
 call KillAll("paint.exe")
-call KillAll("word.exe")
-call KillAll("calculator.exe")
 call KillAll("calc.exe")
 loop
 end if
