@@ -28,7 +28,7 @@
 ::------------- Begin Program -------------::
 :SLoop
     if "%1"=="" (exit)
-    if "%1"=="#" (batbox !Buttons! & endlocal & set "%~2=%Button_Dim%" & exit /b)
+    if "%1"=="#" (%temp%\EclipseV9\CoreF\batbox.exe  !Buttons! & endlocal & set "%~2=%Button_Dim%" & exit /b)
     set XBPB=%1
     set YBPB=%2
     set "Text_Button=%~3"
